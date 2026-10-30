@@ -23,7 +23,7 @@
             color: #333333;
         }
 
-        /* Contenedor principal que simula y fija exactamente el lienzo de 900x1700 px */
+        /* Contenedor principal que fija exactamente el lienzo de 900x1700 px adaptado a pantalla */
         .mobile-canvas {
             position: relative;
             width: 900px;
@@ -42,7 +42,7 @@
             top: 260px;
             left: 50px;
             right: 50px;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.94);
             border: 2px solid #0056b3;
             border-radius: 15px;
             padding: 12px 15px;
@@ -93,11 +93,11 @@
         }
 
         /* --------------------------------------------------
-           BOTONERA INTERACTIVA CENTRAL
+           BOTONERA INTERACTIVA CENTRAL (Sin botón de dirección)
            -------------------------------------------------- */
         .interactive-buttons {
             position: absolute;
-            top: 420px;
+            top: 430px;
             left: 100px;
             right: 100px;
             display: flex;
@@ -254,7 +254,7 @@
                 <div class="carousel-item">🧴 Dispensadores</div>
                 <div class="carousel-item">🧻 Papelería Tissue</div>
                 <div class="carousel-item">🏠 Papelería Hogar</div>
-                <div class="carousel-item">洗衣 Detergentes de Ropa</div>
+                <div class="carousel-item">👕 Detergentes de Ropa</div>
                 <div class="carousel-item">🛡️ Prevención</div>
                 <div class="carousel-item">🧽 Máquinas</div>
             </div>
@@ -281,7 +281,6 @@
         <!-- GALERÍA FOTOGRÁFICA AUTOMATIZADA (Soporta archivos 1.jpg, 2.jpg, etc.) -->
         <div class="dynamic-gallery">
             <div class="gallery-slot">
-                <!-- Reemplazar src con tus imágenes progresivas (1.jpg, 2.jpg...) -->
                 <img src="1.jpg" alt="Trabajo VKS Clean 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                 <span style="display:none;">Foto 1.jpg</span>
             </div>
