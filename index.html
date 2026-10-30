@@ -31,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
 
     /* Contenedor Adaptativo Single-Viewport: Relación 900x1700 */
@@ -48,19 +48,19 @@
       overflow: hidden;
     }
 
-    /* 1. Carrusel de texto sobre fondo blanco puro (Tipografía ampliada a 14px) */
+    /* 1. Carrusel de texto sobre fondo blanco puro (Tipografía ampliada a 15.5px) */
     .ticker-container {
       position: absolute;
-      top: 31.6%;
-      left: 4%;
-      width: 92%;
-      height: 32px;
+      top: 31.5%;
+      left: 3%;
+      width: 94%;
+      height: 34px;
       overflow: hidden;
       display: flex;
       align-items: center;
-      background: transparent;
-      border: none;
-      z-index: 20;
+      background: transparent !important;
+      border: none !important;
+      z-index: 25;
     }
 
     .ticker-container::before,
@@ -69,7 +69,7 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 40px;
+      width: 45px;
       z-index: 2;
       pointer-events: none;
     }
@@ -86,15 +86,15 @@
       display: flex;
       white-space: nowrap;
       will-change: transform;
-      animation: marqueeScroll 30s linear infinite;
+      animation: marqueeScroll 28s linear infinite;
     }
 
     .ticker-item {
       display: inline-flex;
       align-items: center;
       font-family: 'Montserrat', sans-serif;
-      font-size: 14px; /* Notoriamente ampliado */
-      font-weight: 600;
+      font-size: 15.5px !important; /* Notoriamente más grande */
+      font-weight: 700 !important;
       letter-spacing: 0.5px;
       color: #0284c7;
       padding: 0 6px;
@@ -102,8 +102,8 @@
 
     .ticker-dot {
       display: inline-block;
-      width: 5px;
-      height: 5px;
+      width: 6px;
+      height: 6px;
       margin: 0 10px;
       border-radius: 50%;
       background: #10b981;
@@ -114,69 +114,68 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* 2. Botonera con tipografía grande y legible */
+    /* 2. Botonera con textos grandes y notorios */
     .buttons-wrapper {
       position: absolute;
-      top: 36.8%;
-      left: 8%;
-      width: 84%;
+      top: 36.5%;
+      left: 7%;
+      width: 86%;
       display: flex !important;
       flex-direction: column;
       gap: 9px;
-      z-index: 25 !important;
+      z-index: 30 !important;
       visibility: visible !important;
-      opacity: 1 !important;
     }
 
     .clean-btn {
       position: relative;
       display: flex !important;
       align-items: center;
-      padding: 8.5px 16px; /* Altura cómoda para la letra más grande */
+      padding: 9px 18px !important;
       background: #FFFFFF !important;
       border-radius: 50px;
       text-decoration: none;
-      border: 1.5px solid #e0f2fe;
-      box-shadow: 0 5px 12px rgba(12, 74, 110, 0.09), 0 2.5px 0 #bae6fd;
+      border: 2px solid #e0f2fe !important;
+      box-shadow: 0 5px 14px rgba(12, 74, 110, 0.12), 0 3px 0 #bae6fd !important;
       cursor: pointer;
-      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s;
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .clean-btn:active {
-      transform: translateY(1.5px) scale(0.98);
-      box-shadow: 0 2px 4px rgba(12, 74, 110, 0.1), 0 1px 0 #7dd3fc;
+      transform: translateY(2px) scale(0.98);
+      box-shadow: 0 2px 5px rgba(12, 74, 110, 0.12), 0 1px 0 #7dd3fc !important;
     }
 
     .clean-icon {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
+      width: 40px !important;
+      height: 40px !important;
+      min-width: 40px !important;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 13px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      margin-right: 14px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
       border: 1.5px solid #FFFFFF;
     }
 
     .clean-icon svg {
-      width: 19px;
-      height: 19px;
+      width: 22px !important;
+      height: 22px !important;
       fill: #FFFFFF;
     }
 
-    .btn-instagram { border-color: #FED7AA; }
+    .btn-instagram { border-color: #FED7AA !important; }
     .btn-instagram .clean-icon {
       background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
     }
 
-    .btn-whatsapp { border-color: #BBF7D0; }
+    .btn-whatsapp { border-color: #BBF7D0 !important; }
     .btn-whatsapp .clean-icon {
       background: linear-gradient(135deg, #25D366, #128C7E);
     }
 
-    .btn-especial { border-color: #BAE6FD; }
+    .btn-especial { border-color: #BAE6FD !important; }
     .btn-especial .clean-icon {
       background: linear-gradient(135deg, #0284c7, #0369a1);
     }
@@ -188,28 +187,28 @@
 
     .clean-text .label {
       font-family: 'Montserrat', sans-serif;
-      font-size: 15.5px; /* Ampliado para máxima lectura */
-      font-weight: 800;
-      color: #0c4a6e;
+      font-size: 17.5px !important; /* Notoriamente ampliado */
+      font-weight: 900 !important;
+      color: #0c4a6e !important;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       line-height: 1.1;
     }
 
     .clean-text .sub {
-      font-size: 11.5px; /* Ampliado */
-      color: #475569;
-      font-weight: 600;
-      margin-top: 1.5px;
+      font-size: 13px !important; /* Notoriamente ampliado */
+      color: #334155 !important;
+      font-weight: 700 !important;
+      margin-top: 2px;
       line-height: 1.2;
     }
 
     .hand-cursor {
       position: absolute;
-      right: 13px;
+      right: 14px;
       bottom: -6px;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       animation: tapGesture 2s infinite ease-in-out;
       pointer-events: none;
     }
@@ -218,24 +217,25 @@
       width: 100%;
       height: 100%;
       fill: #0c4a6e;
-      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.3));
     }
 
     @keyframes tapGesture {
       0%, 100% { transform: translateY(0) rotate(-15deg); }
-      50% { transform: translateY(-3px) rotate(-5deg); }
+      50% { transform: translateY(-4px) rotate(-5deg); }
     }
 
-    /* 3. Franja completa de fotos de lado a lado (Zona blanca despejada) */
+    /* 3. Franja completa de fotos de lado a lado (Zona blanca garantizada) */
     .photo-banner-strip {
       position: absolute;
-      top: 55.5%;
+      top: 56%;
       left: 0;
       width: 100%;
-      height: 31.5%;
+      height: 31%;
       overflow: hidden;
       background: #FFFFFF;
-      z-index: 10;
+      z-index: 20 !important;
+      display: block !important;
     }
 
     .photo-slide {
@@ -259,8 +259,8 @@
     }
 
     .photo-slide.is-visible {
-      opacity: 1;
-      z-index: 2;
+      opacity: 1 !important;
+      z-index: 2 !important;
     }
 
     .photo-slide.is-visible img {
@@ -268,8 +268,8 @@
     }
 
     .photo-slide.is-leaving {
-      opacity: 0;
-      z-index: 1;
+      opacity: 0 !important;
+      z-index: 1 !important;
     }
 
     @keyframes gentlePan {
@@ -277,15 +277,15 @@
       100% { transform: scale(1.06) translate(-1%, -0.5%); }
     }
 
-    /* 4. Footer Fijo: Calibrado en la cápsula (top: 88.0%, left: 31%) con textos ampliados */
+    /* 4. Footer Fijo: Calibrado en la cápsula celeste (top: 88.0%, left: 29%) con textos grandes */
     .btn-visitanos-touch {
       position: absolute;
-      top: 88.0%; /* Subido a la cápsula */
-      left: 31%;  /* Movido a la izquierda */
-      width: 57%;
-      height: 6.2%;
-      border-radius: 30px;
-      z-index: 30;
+      top: 88.0% !important; /* Subido */
+      left: 29% !important;  /* Corrido a la izquierda */
+      width: 60% !important;
+      height: 6.5% !important;
+      border-radius: 35px;
+      z-index: 40 !important;
       cursor: pointer;
       text-decoration: none;
       display: flex;
@@ -299,27 +299,27 @@
     }
 
     .btn-visitanos-touch:active {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.25);
     }
 
     .address-line-1 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12.5px; /* Ampliado */
-      font-weight: 600;
-      color: #FFFFFF;
+      font-size: 14px !important; /* Notoriamente ampliado */
+      font-weight: 700 !important;
+      color: #FFFFFF !important;
       letter-spacing: 0.2px;
       white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.35);
     }
 
     .address-line-2 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px; /* Ampliado */
-      font-weight: 500;
-      color: #f0fdf4;
+      font-size: 13.5px !important; /* Notoriamente ampliado */
+      font-weight: 600 !important;
+      color: #f0fdf4 !important;
       letter-spacing: 0.3px;
       white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.35);
     }
   </style>
 </head>
@@ -400,10 +400,14 @@
       </a>
     </nav>
 
-    <!-- 3. Franja continua de fotos con motor multiformato garantizado -->
-    <div class="photo-banner-strip" id="photoFrame"></div>
+    <!-- 3. Franja completa de fotos (Visor forzado de lado a lado) -->
+    <div class="photo-banner-strip" id="photoFrame">
+      <div class="photo-slide is-visible"><img src="1.jpg" alt="VKS 1"></div>
+      <div class="photo-slide"><img src="2.jpg" alt="VKS 2"></div>
+      <div class="photo-slide"><img src="3.jpg" alt="VKS 3"></div>
+    </div>
 
-    <!-- 4. Footer Fijo con textos ampliados y centrados -->
+    <!-- 4. Footer Fijo: Calibrado y con textos grandes -->
     <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Brasil+8018+local+1,+Renca,+Santiago" target="_blank" rel="noopener noreferrer" class="btn-visitanos-touch" title="Ver en Google Maps">
       <span class="address-line-1">Av. Brasil 8018, Local 1</span>
       <span class="address-line-2">Renca, Santiago</span>
@@ -414,72 +418,33 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const container = document.getElementById('photoFrame');
-      const extensions = ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'webp', 'jpg.jpg'];
-      const validImages = [];
-      let slideElements = [];
+      const slides = Array.from(container.querySelectorAll('.photo-slide'));
       let currentIndex = 0;
 
-      // Prueba secuencialmente qué extensión real tiene el archivo
-      function resolveImagePath(baseIndex) {
-        return new Promise((resolve) => {
-          let extIdx = 0;
-          function tryNext() {
-            if (extIdx >= extensions.length) {
-              resolve(null);
-              return;
-            }
-            const testUrl = `${baseIndex}.${extensions[extIdx]}`;
-            const img = new Image();
-            img.onload = () => resolve(testUrl);
-            img.onerror = () => {
-              extIdx++;
-              tryNext();
-            };
-            img.src = `${testUrl}?v=${Date.now()}`;
-          }
-          tryNext();
+      // Verificación de existencia de las imágenes
+      const allImgs = container.querySelectorAll('img');
+      allImgs.forEach((img) => {
+        img.addEventListener('error', function() {
+          // Si una foto no carga, oculta su slide individual
+          this.parentElement.style.display = 'none';
         });
+      });
+
+      if (slides.length > 1) {
+        setInterval(() => {
+          const currentSlide = slides[currentIndex];
+          currentIndex = (currentIndex + 1) % slides.length;
+          const nextSlide = slides[currentIndex];
+
+          nextSlide.classList.remove('is-leaving');
+          nextSlide.classList.add('is-visible');
+
+          setTimeout(() => {
+            currentSlide.classList.remove('is-visible');
+            currentSlide.classList.add('is-leaving');
+          }, 1800);
+        }, 5500);
       }
-
-      async function scanAndStartSlideshow() {
-        for (let i = 1; i <= 10; i++) {
-          const found = await resolveImagePath(i);
-          if (found) {
-            validImages.push(found);
-          } else if (i > 3 && validImages.length > 0) {
-            break;
-          }
-        }
-
-        if (validImages.length === 0) return;
-
-        container.innerHTML = '';
-        slideElements = validImages.map((src, idx) => {
-          const slide = document.createElement('div');
-          slide.className = `photo-slide ${idx === 0 ? 'is-visible' : ''}`;
-          slide.innerHTML = `<img src="${src}" alt="VKS Foto ${idx + 1}">`;
-          container.appendChild(slide);
-          return slide;
-        });
-
-        if (slideElements.length > 1) {
-          setInterval(() => {
-            const currentSlide = slideElements[currentIndex];
-            currentIndex = (currentIndex + 1) % slideElements.length;
-            const nextSlide = slideElements[currentIndex];
-
-            nextSlide.classList.remove('is-leaving');
-            nextSlide.classList.add('is-visible');
-
-            setTimeout(() => {
-              currentSlide.classList.remove('is-visible');
-              currentSlide.classList.add('is-leaving');
-            }, 1800);
-          }, 5500);
-        }
-      }
-
-      scanAndStartSlideshow();
     });
   </script>
 
