@@ -13,7 +13,7 @@
             box-sizing: border-box;
         }
 
-        /* Bloqueo total del scroll para asegurar una vista única en cualquier pantalla */
+        /* Bloqueo total del scroll para garantizar visualización en una sola pantalla */
         html, body {
             width: 100%;
             height: 100vh;
@@ -25,29 +25,29 @@
             overflow: hidden;
         }
 
-        /* Contenedor principal responsivo basado en la proporción exacta de menu_2.jpg (900x1700) */
+        /* Contenedor principal que respeta la proporción 900x1700 px usando menu.jpg */
         .mobile-canvas {
             position: relative;
             width: 100%;
-            max-width: 480px; /* Ancho optimizado para visualización móvil nítida */
+            max-width: 460px; /* Ancho optimizado para visualización móvil y PC nítida */
             height: 100vh;
-            max-height: 920px; /* Ajuste proporcional para una sola pantalla */
-            background: #ffffff url('menu_2.jpg') no-repeat center center;
+            max-height: 880px; /* Proporción adaptada para una sola pantalla perfecta */
+            background: #ffffff url('menu.jpg') no-repeat center center;
             background-size: 100% 100%;
             overflow: hidden;
-            box-shadow: 0 0 25px rgba(0,0,0,0.3);
+            box-shadow: 0 0 25px rgba(0,0,0,0.25);
         }
 
         /* --------------------------------------------------
-           CORTINA DE PRODUCTOS (MARQUESINA FLUIDA Y TRANSPARENTE)
+           CORTINA DE PRODUCTOS (MARQUESINA TRANSPARENTE FLUIDA)
            -------------------------------------------------- */
         .product-marquee-container {
             position: absolute;
-            top: 23.5%; /* Posicionado exactamente en la franja blanca superior */
+            top: 23%; /* Ubicado exactamente en la franja blanca superior */
             left: 0;
             width: 100%;
             background: transparent;
-            padding: 6px 0;
+            padding: 5px 0;
             overflow: hidden;
             white-space: nowrap;
             z-index: 10;
@@ -56,15 +56,15 @@
         .marquee-track {
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 28s linear infinite;
+            animation: marquee 26s linear infinite;
         }
 
         .marquee-item {
             display: inline-block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #003366;
-            margin-right: 30px;
+            margin-right: 25px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -79,12 +79,12 @@
            -------------------------------------------------- */
         .interactive-buttons {
             position: absolute;
-            top: 31%;
+            top: 30%;
             left: 10%;
             right: 10%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             z-index: 10;
         }
 
@@ -96,12 +96,12 @@
             background: rgba(255, 255, 255, 0.92);
             border: 2px solid #0056b3;
             color: #003366;
-            padding: 11px 18px;
-            border-radius: 12px;
-            font-size: 16px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 15px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
             transition: all 0.25s ease;
             cursor: pointer;
             position: relative;
@@ -118,26 +118,26 @@
             content: '👆';
             position: absolute;
             right: 15px;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         /* --------------------------------------------------
-           VENTANA DE GALERÍA FOTOGRÁFICA ÚNICA (PANEO SUAVE)
+           VENTANA ÚNICA DE GALERÍA (PANEO SUAVE Y ELEGANTE)
            -------------------------------------------------- */
         .single-gallery-window {
             position: absolute;
-            top: 56%;
+            top: 55%;
             left: 10%;
             right: 10%;
-            height: 24%;
+            height: 25%;
             background: rgba(255, 255, 255, 0.85);
             border: 2px solid #0056b3;
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             z-index: 10;
         }
 
@@ -153,19 +153,24 @@
             height: 100%;
             object-fit: cover;
             opacity: 0;
-            transition: opacity 1s ease-in-out, transform 5s ease;
+            transition: opacity 1s ease-in-out, transform 6s ease;
         }
 
         .gallery-slide.active {
             opacity: 1;
-            transform: scale(1.03); /* Efecto paneo sutil y elegante */
+            transform: scale(1.04); /* Efecto paneo sutil */
         }
 
         .gallery-placeholder {
             color: #6c757d;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
         }
 
         /* --------------------------------------------------
@@ -173,10 +178,10 @@
            -------------------------------------------------- */
         .footer-location-capsule {
             position: absolute;
-            bottom: 3%;
-            right: 5%;
-            width: 50%; /* Ajustado exactamente a la cápsula del fondo */
-            height: 65px;
+            bottom: 3.5%;
+            right: 6%;
+            width: 48%;
+            height: 55px;
             background: transparent;
             display: flex;
             align-items: center;
@@ -188,9 +193,9 @@
             background: #28a745;
             color: #ffffff;
             border: 2px solid #ffffff;
-            padding: 8px 15px;
-            border-radius: 10px;
-            font-size: 14px;
+            padding: 8px 14px;
+            border-radius: 9px;
+            font-size: 13px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
@@ -225,7 +230,7 @@
                 <span class="marquee-item">👕 Detergentes de Ropa</span>
                 <span class="marquee-item">🛡️ Prevención</span>
                 <span class="marquee-item">🧽 Máquinas</span>
-                <!-- Duplicado para loop infinito fluido -->
+                <!-- Duplicado para loop infinito -->
                 <span class="marquee-item">🧹 Pisos</span>
                 <span class="marquee-item">🚽 Baños</span>
                 <span class="marquee-item">🍳 Cocina</span>
@@ -257,11 +262,10 @@
         <!-- VENTANA ÚNICA DE GALERÍA (PANEO AUTOMÁTICO DE FOTOS 1.jpg, 2.jpg...) -->
         <div class="single-gallery-window">
             <div class="gallery-slideshow" id="slideshow">
-                <!-- Las imágenes se cargan dinámicamente o se muestran mediante clases -->
-                <img src="1.jpg" class="gallery-slide active" alt="Trabajo 1" onerror="this.style.display='none';">
+                <img src="1.jpg" class="gallery-slide active" alt="Trabajo 1" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
                 <img src="2.jpg" class="gallery-slide" alt="Trabajo 2" onerror="this.style.display='none';">
-                <div class="gallery-placeholder" id="placeholder" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
-                    Coloca tus fotos 1.jpg, 2.jpg...
+                <div class="gallery-placeholder" id="placeholder" style="display:none;">
+                    Sube tus fotos 1.jpg, 2.jpg...
                 </div>
             </div>
         </div>
@@ -276,7 +280,7 @@
     </div>
 
     <script>
-        /* Script sencillo para el paneo automático de fotos en la ventana única */
+        /* Script de transiciones suaves (paneo automático de fotos) */
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
         
@@ -288,7 +292,7 @@
         }
 
         if(slides.length > 1) {
-            setInterval(nextSlide, 4000); // Cambia de foto cada 4 segundos con paneo elegante
+            setInterval(nextSlide, 4500); // Rota suavemente cada 4.5 segundos
         }
     </script>
 </body>
