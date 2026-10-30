@@ -44,11 +44,11 @@
       aspect-ratio: 900 / 1700;
       background: #FFFFFF url('menu.jpg') no-repeat center center;
       background-size: 100% 100%;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
       overflow: hidden;
     }
 
-    /* 1. Carrusel de texto sobre fondo blanco limpio (sin marco celeste) */
+    /* 1. Carrusel de texto sobre fondo blanco puro (sin caja celeste) */
     .ticker-container {
       position: absolute;
       top: 31.8%;
@@ -114,16 +114,16 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* 2. Botonera compacta */
+    /* 2. Botonera compacta (altura baja y espaciado limpio) */
     .buttons-wrapper {
       position: absolute;
-      top: 37%;
+      top: 37.2%;
       left: 8.5%;
       width: 83%;
       display: flex !important;
       flex-direction: column;
       gap: 8.5px;
-      z-index: 25 !important;
+      z-index: 30 !important;
       visibility: visible !important;
       opacity: 1 !important;
     }
@@ -271,15 +271,15 @@
       100% { transform: scale(1.06) translate(-1%, -1%); }
     }
 
-    /* 4. Footer fijo en dos líneas: letra fina, normal y centrado en la cápsula */
+    /* 4. Footer Fijo: 2 líneas, tipografía normal y centrado en la cápsula */
     .btn-visitanos-touch {
       position: absolute;
-      top: 90.5%;
+      top: 90.6%;
       left: 36%;
       width: 53%;
-      height: 6%;
+      height: 5.8%;
       border-radius: 30px;
-      z-index: 30;
+      z-index: 35;
       cursor: pointer;
       text-decoration: none;
       display: flex;
@@ -365,4 +365,83 @@
         </div>
       </a>
 
-      <a href="
+      <a href="https://wa.me/56977544062?text=Hola%20VKS%20Clean,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20sobre%20sus%20productos." target="_blank" rel="noopener noreferrer" class="clean-btn btn-whatsapp" title="Contactar por WhatsApp">
+        <div class="clean-icon">
+          <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        </div>
+        <div class="clean-text">
+          <div class="label">Contáctanos</div>
+          <div class="sub">Atención comercial y asesoría directa</div>
+        </div>
+        <div class="hand-cursor">
+          <svg viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74a4.5 4.5 0 0 0-9 0c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26a1.5 1.5 0 0 0-1.3-.06l-1 .47V7.5a1 1 0 0 0-2 0v8.66l-3.32-.7a1.53 1.53 0 0 0-1.57.54l-.86 1.04 4.96 5.23c.39.41.93.65 1.49.65h6.63c1.02 0 1.88-.74 1.98-1.75l.48-4.78a2 2 0 0 0-.95-2.06z"/></svg>
+        </div>
+      </a>
+
+      <a href="https://wa.me/56977544062?text=Hola%20VKS%20Clean,%20necesito%20hacer%20un%20pedido%20especial." target="_blank" rel="noopener noreferrer" class="clean-btn btn-especial" title="Realizar pedido especial">
+        <div class="clean-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.96.76 1.58V19z"/></svg>
+        </div>
+        <div class="clean-text">
+          <div class="label">Pedidos Especiales</div>
+          <div class="sub">Venta a instituciones, empresas y emprendimientos</div>
+        </div>
+        <div class="hand-cursor">
+          <svg viewBox="0 0 24 24"><path d="M9 11.24V7.5a2.5 2.5 0 0 1 5 0v3.74c1.21-.81 2-2.18 2-3.74a4.5 4.5 0 0 0-9 0c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26a1.5 1.5 0 0 0-1.3-.06l-1 .47V7.5a1 1 0 0 0-2 0v8.66l-3.32-.7a1.53 1.53 0 0 0-1.57.54l-.86 1.04 4.96 5.23c.39.41.93.65 1.49.65h6.63c1.02 0 1.88-.74 1.98-1.75l.48-4.78a2 2 0 0 0-.95-2.06z"/></svg>
+        </div>
+      </a>
+    </nav>
+
+    <!-- 3. Visor de fotos con carga garantizada -->
+    <div class="photo-frame-container" id="photoFrame">
+      <div class="photo-slide is-visible" style="background-image: url('1.jpg');"></div>
+      <div class="photo-slide" style="background-image: url('2.jpg');"></div>
+      <div class="photo-slide" style="background-image: url('3.jpg');"></div>
+    </div>
+
+    <!-- 4. Footer Fijo: 2 líneas, letra normal, centrado en la cápsula -->
+    <a href="https://www.google.com/maps/search/?api=1&query=Avenida+Brasil+8018+local+1,+Renca,+Santiago" target="_blank" rel="noopener noreferrer" class="btn-visitanos-touch" title="Ver en Google Maps">
+      <span class="address-line-1">Av. Brasil 8018, Local 1</span>
+      <span class="address-line-2">Renca, Santiago</span>
+    </a>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('photoFrame');
+      const slides = Array.from(container.querySelectorAll('.photo-slide'));
+      let currentIndex = 0;
+
+      // Verifica si al menos la primera imagen carga; si no existe, oculta el marco limpiamente
+      const testImg = new Image();
+      testImg.onload = () => {
+        container.style.display = 'block';
+      };
+      testImg.onerror = () => {
+        // Si no existen fotos locales, se oculta el contenedor para dejar el espacio blanco intacto
+        container.style.display = 'none';
+      };
+      testImg.src = '1.jpg';
+
+      // Transición automática suave y continua cada 5.2 segundos
+      if (slides.length > 1) {
+        setInterval(() => {
+          const currentSlide = slides[currentIndex];
+          currentIndex = (currentIndex + 1) % slides.length;
+          const nextSlide = slides[currentIndex];
+
+          nextSlide.classList.remove('is-leaving');
+          nextSlide.classList.add('is-visible');
+
+          setTimeout(() => {
+            currentSlide.classList.remove('is-visible');
+            currentSlide.classList.add('is-leaving');
+          }, 1800);
+        }, 5200);
+      }
+    });
+  </script>
+
+</body>
+</html>
