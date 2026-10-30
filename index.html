@@ -13,7 +13,7 @@
             box-sizing: border-box;
         }
 
-        /* Bloqueo de scroll exterior para que todo se vea en una sola pantalla */
+        /* Bloqueo total del scroll para asegurar una vista única en cualquier pantalla */
         html, body {
             width: 100%;
             height: 100vh;
@@ -25,29 +25,29 @@
             overflow: hidden;
         }
 
-        /* Contenedor principal responsivo que respeta la proporción 900x1700 px ajustada a la pantalla */
+        /* Contenedor principal responsivo basado en la proporción exacta de menu_2.jpg (900x1700) */
         .mobile-canvas {
             position: relative;
             width: 100%;
-            max-width: 540px; /* Ancho optimizado para visualización móvil nítida */
+            max-width: 480px; /* Ancho optimizado para visualización móvil nítida */
             height: 100vh;
-            max-height: 1020px; /* Proporción adaptada sin perder elementos */
+            max-height: 920px; /* Ajuste proporcional para una sola pantalla */
             background: #ffffff url('menu_2.jpg') no-repeat center center;
             background-size: 100% 100%;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.25);
+            box-shadow: 0 0 25px rgba(0,0,0,0.3);
         }
 
         /* --------------------------------------------------
-           CARRUSEL / CORTINA DE TEXTO CONTINUO (SIN RECUADROS)
+           CORTINA DE PRODUCTOS (MARQUESINA FLUIDA Y TRANSPARENTE)
            -------------------------------------------------- */
         .product-marquee-container {
             position: absolute;
-            top: 24%; /* Ubicado exactamente en la franja blanca superior central */
+            top: 23.5%; /* Posicionado exactamente en la franja blanca superior */
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.4); /* Sutil transparencia para lectura */
-            padding: 8px 0;
+            background: transparent;
+            padding: 6px 0;
             overflow: hidden;
             white-space: nowrap;
             z-index: 10;
@@ -56,15 +56,15 @@
         .marquee-track {
             display: inline-block;
             white-space: nowrap;
-            animation: marquee 25s linear infinite;
+            animation: marquee 28s linear infinite;
         }
 
         .marquee-item {
             display: inline-block;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: #003366;
-            margin-right: 35px;
+            margin-right: 30px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -75,16 +75,16 @@
         }
 
         /* --------------------------------------------------
-           BOTONERA INTERACTIVA CENTRAL (ÁREA LIBRE)
+           BOTONERA INTERACTIVA CENTRAL (SUTIL Y ELEGANTE)
            -------------------------------------------------- */
         .interactive-buttons {
             position: absolute;
-            top: 32%;
-            left: 12%;
-            right: 12%;
+            top: 31%;
+            left: 10%;
+            right: 10%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
             z-index: 10;
         }
 
@@ -92,16 +92,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,244,248,0.95) 100%);
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.92);
             border: 2px solid #0056b3;
             color: #003366;
-            padding: 14px 20px;
-            border-radius: 14px;
-            font-size: 18px;
+            padding: 11px 18px;
+            border-radius: 12px;
+            font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             transition: all 0.25s ease;
             cursor: pointer;
             position: relative;
@@ -109,7 +109,7 @@
 
         .btn-custom:hover {
             transform: translateY(-2px);
-            background: linear-gradient(135deg, rgba(226,240,217,0.95) 0%, rgba(212,237,218,0.95) 100%);
+            background: rgba(235, 247, 238, 0.95);
             border-color: #28a745;
             color: #155724;
         }
@@ -117,59 +117,66 @@
         .btn-custom::after {
             content: '👆';
             position: absolute;
-            right: 18px;
-            font-size: 18px;
+            right: 15px;
+            font-size: 15px;
         }
 
         /* --------------------------------------------------
-           GALERÍA DINÁMICA DE TRABAJOS (AUTOMATIZADA)
+           VENTANA DE GALERÍA FOTOGRÁFICA ÚNICA (PANEO SUAVE)
            -------------------------------------------------- */
-        .dynamic-gallery {
+        .single-gallery-window {
             position: absolute;
-            top: 59%;
+            top: 56%;
             left: 10%;
             right: 10%;
-            height: 25%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            overflow-y: auto;
-            padding: 5px;
-            z-index: 10;
-        }
-
-        .gallery-slot {
-            background: rgba(255, 255, 255, 0.75);
-            border: 2px dashed #0056b3;
-            border-radius: 10px;
+            height: 24%;
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px solid #0056b3;
+            border-radius: 12px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            min-height: 90px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10;
         }
 
-        .gallery-slot img {
+        .gallery-slideshow {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .gallery-slide {
+            position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 5s ease;
         }
 
-        .gallery-slot span {
+        .gallery-slide.active {
+            opacity: 1;
+            transform: scale(1.03); /* Efecto paneo sutil y elegante */
+        }
+
+        .gallery-placeholder {
             color: #6c757d;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
+            text-align: center;
         }
 
         /* --------------------------------------------------
-           FOOTER / CÁPSULA DE GEOLOCALIZACIÓN (INFERIOR DERECHA)
+           CÁPSULA INFERIOR DERECHA (GEOLOCALIZACIÓN)
            -------------------------------------------------- */
         .footer-location-capsule {
             position: absolute;
-            bottom: 3.5%;
+            bottom: 3%;
             right: 5%;
-            width: 55%; /* Coincide exactamente con la cápsula verde/azul del fondo */
-            height: 75px;
+            width: 50%; /* Ajustado exactamente a la cápsula del fondo */
+            height: 65px;
             background: transparent;
             display: flex;
             align-items: center;
@@ -181,15 +188,15 @@
             background: #28a745;
             color: #ffffff;
             border: 2px solid #ffffff;
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-size: 15px;
+            padding: 8px 15px;
+            border-radius: 10px;
+            font-size: 14px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            gap: 6px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
             text-decoration: none;
             transition: background 0.3s;
         }
@@ -203,7 +210,7 @@
 
     <div class="mobile-canvas">
 
-        <!-- CORTINA DE TEXTO CONTINUO (MARQUESINA SIN RECUADROS) -->
+        <!-- CORTINA DE TEXTO CONTINUO (MARQUESINA TRANSPARENTE) -->
         <div class="product-marquee-container">
             <div class="marquee-track">
                 <span class="marquee-item">🧹 Pisos</span>
@@ -218,7 +225,7 @@
                 <span class="marquee-item">👕 Detergentes de Ropa</span>
                 <span class="marquee-item">🛡️ Prevención</span>
                 <span class="marquee-item">🧽 Máquinas</span>
-                <!-- Duplicado para efecto fluido infinito -->
+                <!-- Duplicado para loop infinito fluido -->
                 <span class="marquee-item">🧹 Pisos</span>
                 <span class="marquee-item">🚽 Baños</span>
                 <span class="marquee-item">🍳 Cocina</span>
@@ -247,15 +254,15 @@
             </a>
         </div>
 
-        <!-- GALERÍA DINÁMICA DE TRABAJOS (Automatizada para 1.jpg, 2.jpg...) -->
-        <div class="dynamic-gallery">
-            <div class="gallery-slot">
-                <img src="1.jpg" alt="Trabajo 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span style="display:none;">Foto 1.jpg</span>
-            </div>
-            <div class="gallery-slot">
-                <img src="2.jpg" alt="Trabajo 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <span style="display:none;">Foto 2.jpg</span>
+        <!-- VENTANA ÚNICA DE GALERÍA (PANEO AUTOMÁTICO DE FOTOS 1.jpg, 2.jpg...) -->
+        <div class="single-gallery-window">
+            <div class="gallery-slideshow" id="slideshow">
+                <!-- Las imágenes se cargan dinámicamente o se muestran mediante clases -->
+                <img src="1.jpg" class="gallery-slide active" alt="Trabajo 1" onerror="this.style.display='none';">
+                <img src="2.jpg" class="gallery-slide" alt="Trabajo 2" onerror="this.style.display='none';">
+                <div class="gallery-placeholder" id="placeholder" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
+                    Coloca tus fotos 1.jpg, 2.jpg...
+                </div>
             </div>
         </div>
 
@@ -268,5 +275,21 @@
 
     </div>
 
+    <script>
+        /* Script sencillo para el paneo automático de fotos en la ventana única */
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        
+        function nextSlide() {
+            if(slides.length === 0) return;
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        if(slides.length > 1) {
+            setInterval(nextSlide, 4000); // Cambia de foto cada 4 segundos con paneo elegante
+        }
+    </script>
 </body>
 </html>
