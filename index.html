@@ -13,7 +13,7 @@
             box-sizing: border-box;
         }
 
-        /* Bloqueo total del scroll para garantizar visualización en una sola pantalla */
+        /* Bloqueo total del scroll para garantizar vista única en cualquier dispositivo */
         html, body {
             width: 100%;
             height: 100vh;
@@ -25,29 +25,29 @@
             overflow: hidden;
         }
 
-        /* Contenedor principal que respeta la proporción 900x1700 px usando menu.jpg */
+        /* Contenedor responsivo ajustado a la proporción 900x1700 usando menu.jpg */
         .mobile-canvas {
             position: relative;
             width: 100%;
-            max-width: 460px; /* Ancho optimizado para visualización móvil y PC nítida */
+            max-width: 450px;
             height: 100vh;
-            max-height: 880px; /* Proporción adaptada para una sola pantalla perfecta */
+            max-height: 850px;
             background: #ffffff url('menu.jpg') no-repeat center center;
             background-size: 100% 100%;
             overflow: hidden;
-            box-shadow: 0 0 25px rgba(0,0,0,0.25);
+            box-shadow: 0 0 20px rgba(0,0,0,0.25);
         }
 
         /* --------------------------------------------------
-           CORTINA DE PRODUCTOS (MARQUESINA TRANSPARENTE FLUIDA)
+           CORTINA DE PRODUCTOS (MARQUESINA TRANSPARENTE)
            -------------------------------------------------- */
         .product-marquee-container {
             position: absolute;
-            top: 23%; /* Ubicado exactamente en la franja blanca superior */
+            top: 23%;
             left: 0;
             width: 100%;
             background: transparent;
-            padding: 5px 0;
+            padding: 4px 0;
             overflow: hidden;
             white-space: nowrap;
             z-index: 10;
@@ -80,8 +80,8 @@
         .interactive-buttons {
             position: absolute;
             top: 30%;
-            left: 10%;
-            right: 10%;
+            left: 12%;
+            right: 12%;
             display: flex;
             flex-direction: column;
             gap: 10px;
@@ -122,14 +122,14 @@
         }
 
         /* --------------------------------------------------
-           VENTANA ÚNICA DE GALERÍA (PANEO SUAVE Y ELEGANTE)
+           VENTANA ÚNICA DE GALERÍA (PANEO SUAVE)
            -------------------------------------------------- */
         .single-gallery-window {
             position: absolute;
             top: 55%;
-            left: 10%;
-            right: 10%;
-            height: 25%;
+            left: 12%;
+            right: 12%;
+            height: 24%;
             background: rgba(255, 255, 255, 0.85);
             border: 2px solid #0056b3;
             border-radius: 10px;
@@ -158,7 +158,7 @@
 
         .gallery-slide.active {
             opacity: 1;
-            transform: scale(1.04); /* Efecto paneo sutil */
+            transform: scale(1.04);
         }
 
         .gallery-placeholder {
@@ -181,7 +181,7 @@
             bottom: 3.5%;
             right: 6%;
             width: 48%;
-            height: 55px;
+            height: 50px;
             background: transparent;
             display: flex;
             align-items: center;
@@ -193,14 +193,14 @@
             background: #28a745;
             color: #ffffff;
             border: 2px solid #ffffff;
-            padding: 8px 14px;
-            border-radius: 9px;
+            padding: 7px 12px;
+            border-radius: 8px;
             font-size: 13px;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.25);
             text-decoration: none;
             transition: background 0.3s;
@@ -230,7 +230,7 @@
                 <span class="marquee-item">👕 Detergentes de Ropa</span>
                 <span class="marquee-item">🛡️ Prevención</span>
                 <span class="marquee-item">🧽 Máquinas</span>
-                <!-- Duplicado para loop infinito -->
+                <!-- Duplicado para loop infinito fluido -->
                 <span class="marquee-item">🧹 Pisos</span>
                 <span class="marquee-item">🚽 Baños</span>
                 <span class="marquee-item">🍳 Cocina</span>
@@ -259,7 +259,7 @@
             </a>
         </div>
 
-        <!-- VENTANA ÚNICA DE GALERÍA (PANEO AUTOMÁTICO DE FOTOS 1.jpg, 2.jpg...) -->
+        <!-- VENTANA ÚNICA DE GALERÍA (PANEO AUTOMÁTICO DE FOTOS) -->
         <div class="single-gallery-window">
             <div class="gallery-slideshow" id="slideshow">
                 <img src="1.jpg" class="gallery-slide active" alt="Trabajo 1" onerror="this.style.display='none'; document.getElementById('placeholder').style.display='flex';">
@@ -280,7 +280,7 @@
     </div>
 
     <script>
-        /* Script de transiciones suaves (paneo automático de fotos) */
+        /* Script de transiciones suaves (paneo automático de fotos en ventana única) */
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
         
