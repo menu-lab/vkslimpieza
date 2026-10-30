@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>VKS Clean - Soluciones Profesionales de Limpieza</title>
 
-  <!-- Favicon Oficial 32x32 px en Base64 (Gota y Hoja VKS sobre fondo blanco puro) -->
+  <!-- Favicon Oficial 32x32 px en Base64 -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32'%3E%3Crect width='32' height='32' fill='%23ffffff'/%3E%3Cpath d='M16 3C16 3 8 13 8 19a8 8 0 0 0 16 0c0-6-8-16-8-16z' fill='%230ea5e9'/%3E%3Cpath d='M16 9c-2 4-5 8-5 11a5 5 0 0 0 8.5 3.5C21 21 21 16 16 9z' fill='%2310b981'/%3E%3Cpolygon points='16,14 17.5,17.5 21,18 18.5,20.5 19,24 16,22 13,24 13.5,20.5 11,18 14.5,17.5' fill='%23ffffff'/%3E%3C/svg%3E">
 
   <!-- Tipografías Oficiales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -49,17 +49,90 @@
     }
 
     /* ========================================================
-       BOTONERA CENTRAL ESTILIZADA (34% A 78%)
-       Espacio superior e inferior 100% respetados
+       1. CARRUSEL / MARQUESINA DE TEXTO SUAVE Y ELEGANTE
+       Ubicado entre la cabecera (28.5%) y los botones (38%)
+       ======================================================== */
+    .ticker-container {
+      position: absolute;
+      top: 31.8%;
+      left: 6%;
+      width: 88%;
+      height: 34px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: rgba(224, 242, 254, 0.45);
+      border-radius: 20px;
+      border: 1px solid rgba(186, 230, 253, 0.7);
+      backdrop-filter: blur(2px);
+      z-index: 20;
+    }
+
+    /* Difuminado suave en extremos */
+    .ticker-container::before,
+    .ticker-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 28px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .ticker-container::before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), transparent);
+    }
+    .ticker-container::after {
+      right: 0;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0.95), transparent);
+    }
+
+    .ticker-track {
+      display: flex;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      color: #0369a1;
+      padding: 0 6px;
+    }
+
+    .ticker-dot {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      margin: 0 10px;
+      border-radius: 50%;
+      background: #10b981;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ========================================================
+       2. BOTONERA MODULAR SUBIDA Y MÁS BAJA (-40% ALTURA)
+       Ubicada entre 38% y 56%
+       Deja amplia zona blanca libre abajo
        ======================================================== */
     .buttons-wrapper {
       position: absolute;
-      top: 42%;
+      top: 38%;
       left: 8.5%;
       width: 83%;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 10px; /* Juntados */
       z-index: 25;
     }
 
@@ -67,47 +140,41 @@
       position: relative;
       display: flex;
       align-items: center;
-      padding: 14px 18px;
+      padding: 7.5px 15px; /* 40% más bajo */
       background: #FFFFFF;
       border-radius: 50px;
       text-decoration: none;
-      border: 2px solid #e0f2fe;
-      box-shadow: 0 8px 20px rgba(12, 74, 110, 0.12), 0 3px 0 #bae6fd;
+      border: 1.5px solid #e0f2fe;
+      box-shadow: 0 4px 12px rgba(12, 74, 110, 0.1), 0 2.5px 0 #bae6fd;
       cursor: pointer;
       transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s;
     }
 
-    .clean-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(12, 74, 110, 0.16), 0 3px 0 #7dd3fc;
-    }
-
     .clean-btn:active {
-      transform: translateY(2px) scale(0.98);
-      box-shadow: 0 3px 8px rgba(12, 74, 110, 0.1), 0 1px 0 #7dd3fc;
+      transform: translateY(1.5px) scale(0.98);
+      box-shadow: 0 2px 5px rgba(12, 74, 110, 0.1), 0 1px 0 #7dd3fc;
     }
 
-    /* Icono circular izquierdo */
+    /* Icono circular compacto */
     .clean-icon {
-      width: 46px;
-      height: 46px;
-      min-width: 46px;
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-right: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
-      border: 1.5px solid #FFFFFF;
+      margin-right: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      border: 1px solid #FFFFFF;
     }
 
     .clean-icon svg {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
       fill: #FFFFFF;
     }
 
-    /* Colores temáticos acordes a VKS CLEAN */
     .btn-instagram { border-color: #FED7AA; }
     .btn-instagram .clean-icon {
       background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
@@ -123,7 +190,7 @@
       background: linear-gradient(135deg, #0284c7, #0369a1);
     }
 
-    /* Textos del Botón */
+    /* Textos compactos */
     .clean-text {
       flex: 1;
       text-align: left;
@@ -131,28 +198,28 @@
 
     .clean-text .label {
       font-family: 'Montserrat', sans-serif;
-      font-size: 14.5px;
+      font-size: 12.5px;
       font-weight: 800;
       color: #0c4a6e;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      line-height: 1.15;
+      letter-spacing: 0.4px;
+      line-height: 1.1;
     }
 
     .clean-text .sub {
-      font-size: 11px;
+      font-size: 9.5px;
       color: #64748b;
-      font-weight: 700;
-      margin-top: 2px;
+      font-weight: 600;
+      margin-top: 1px;
     }
 
     /* Cursor de mano interactivo */
     .hand-cursor {
       position: absolute;
-      right: 14px;
-      bottom: -6px;
-      width: 20px;
-      height: 20px;
+      right: 12px;
+      bottom: -5px;
+      width: 17px;
+      height: 17px;
       animation: tapGesture 2s infinite ease-in-out;
       pointer-events: none;
     }
@@ -161,17 +228,16 @@
       width: 100%;
       height: 100%;
       fill: #0c4a6e;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
     }
 
     @keyframes tapGesture {
       0%, 100% { transform: translateY(0) rotate(-15deg); }
-      50% { transform: translateY(-4px) rotate(-5deg); }
+      50% { transform: translateY(-3px) rotate(-5deg); }
     }
 
     /* ========================================================
-       FOOTER FIJO DE UBICACIÓN Y DESPACHOS
-       Calibrado sobre la pastilla turquesa inferior con el pin
+       3. FOOTER FIJO TÁCTIL SOBRE PASTILLA DEL PIN
        ======================================================== */
     .btn-visitanos-touch {
       position: absolute;
@@ -187,7 +253,7 @@
       align-items: center;
       justify-content: center;
       font-family: 'Montserrat', sans-serif;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 800;
       color: #FFFFFF;
       letter-spacing: 0.6px;
@@ -205,7 +271,40 @@
 
   <main class="app-container" id="appContainer">
 
-    <!-- BOTONERA CENTRAL CON CURSORES DE MANO -->
+    <!-- 1. CARRUSEL DE CATEGORÍAS ELEGANTE Y FLUIDO -->
+    <div class="ticker-container" aria-hidden="true">
+      <div class="ticker-track">
+        <!-- Bloque 1 -->
+        <span class="ticker-item">Pisos<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Baños<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Cocina<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Automotriz<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Mascotas<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Implementos<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Dispensadores<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Papelería tissue<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Papelería hogar<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Detergentes de ropa<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Prevención<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Máquinas<span class="ticker-dot"></span></span>
+
+        <!-- Bloque duplicado para bucle continuo infinito sin saltos -->
+        <span class="ticker-item">Pisos<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Baños<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Cocina<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Automotriz<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Mascotas<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Implementos<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Dispensadores<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Papelería tissue<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Papelería hogar<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Detergentes de ropa<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Prevención<span class="ticker-dot"></span></span>
+        <span class="ticker-item">Máquinas<span class="ticker-dot"></span></span>
+      </div>
+    </div>
+
+    <!-- 2. BOTONERA SUBIDA Y MÁS BAJA (40% MENOS ALTURA) -->
     <nav class="buttons-wrapper" aria-label="Canales de atención VKS Clean">
 
       <!-- 1. Instagram Oficial -->
@@ -236,7 +335,7 @@
         </div>
       </a>
 
-      <!-- 3. Pedidos Especiales (WhatsApp con mensaje requerido) -->
+      <!-- 3. Pedidos Especiales (WhatsApp Personalizado) -->
       <a href="https://wa.me/56977544062?text=Hola%20VKS%20Clean,%20necesito%20hacer%20un%20pedido%20especial." target="_blank" rel="noopener noreferrer" class="clean-btn btn-especial" title="Realizar pedido especial">
         <div class="clean-icon">
           <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.96.76 1.58V19z"/></svg>
@@ -252,7 +351,7 @@
 
     </nav>
 
-    <!-- FOOTER FIJO TÁCTIL SOBRE LA PASTILLA VERDE DEL PIN -->
+    <!-- 3. FOOTER FIJO TÁCTIL SOBRE PASTILLA VERDE DEL PIN -->
     <a href="https://www.google.com/maps/search/?api=1&query=VKS+Clean+Chile" target="_blank" rel="noopener noreferrer" class="btn-visitanos-touch" title="Ubicación y Despachos">
       Ubicación y Envíos
     </a>
